@@ -1,26 +1,29 @@
-function ImageMarkup({ images }) {
-    const imageCards = images.map(({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) => 
-    `<div class="photo-card">
-        <a class="gallery-item" href="${largeImageURL}">
-            <img class="gallery-image" src="${webformatURL}" alt="${tags}" loading="lazy"/>
-        </a>
+const gallery = document.querySelector('.gallery');
+
+export function createMarkup(images) {
+  const markup = images
+    .map(image => {
+      const {
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      } = image;
+
+      return `<div class="photo-card">
+        <a class="link" href="${largeImageURL}"><img class ="gallary-image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
         <div class="info">
-            <p class="info-item">
-                <b>Likes: </b></br>${likes}
-            </p>
-            <p class="info-item">
-                <b>Views: </b></br>${views}
-            </p>
-            <p class="info-item">
-                <b>Comments: </b></br>${comments}
-            </p>
-            <p class="info-item">
-                <b>Downloads: </b></br>${downloads}
-            </p>
+          <p class="info-item"><b>Likes ${likes}</b></p>
+          <p class="info-item"><b>Views ${views}</b></p>
+          <p class="info-item"><b>Comments ${comments}</b></p>
+          <p class="info-item"><b>Downloads ${downloads}</b></p>
         </div>
-    </div>`);
+      </div>`;
+    })
+    .join('');
 
-    return imageCards.join('');
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-export { ImageMarkup };
