@@ -11,3 +11,128 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    text-align: center;
+    align-items: center;
+    background: linear-gradient(270deg, #f9c308, #e044f0);
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 250ms ease-in-out, transform 200ms ease-in-out;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+button:hover,
+button:focus {
+    background-color: #fb7c0a;
+    transform: scale(1.05);
+}
+
+.wrapper-button {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-button {
+    margin: 0;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-image: linear-gradient(to right,
+            rgba(210, 203, 197, 0.878),
+            rgba(201, 189, 178, 0.878));
+    padding: 20px;
+}
+
+.search-input {
+    width: 30%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px 5px;
+    outline: none;
+    color: #404243;
+    margin-right: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 0;
+    max-width: calc(100vw - 80px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.photo-card {
+    background: linear-gradient(270deg, #f9c308, #e044f0);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+
+.photo-card:hover,
+.photo-card:focus {
+    transform: scale(1.02);
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 4px 1px 14px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 4px 1px 14px 5px rgba(0, 0, 0, 0);
+}
+
+.gallary-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallary-image:hover {
+    transform: scale(1.05);
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    padding: 15px 0;
+    background-color: #e044f0;
+    border-radius: 0 0 20px 20px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.gallary-image {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
